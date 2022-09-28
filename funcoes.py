@@ -1,14 +1,6 @@
 import win32com.client as win
 from variables import var
 class func:
-    '''
-    def To_(self, qntd_email):
-        To_emails = []
-        for ind in (0, qntd_email):
-            email = input('para quem é o email?')
-            To_emails.append(email)
-        return To_emails
-    '''
     def cria_email(tipo ,para , GMUD ,HOST_service ,descricao ):
         outlook = win.Dispatch('outlook.application')
         email = outlook.CreateItem(0)
