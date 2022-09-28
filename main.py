@@ -1,8 +1,8 @@
 import win32com.client as win
 from funcoes import func
-#############################################
-##    ESTA AUTOMAÇÃO EM DESENVOLVIMENTO    ## 
-#############################################
+##################################################
+##    ESTA AUTOMAÇÃO ESTÁ EM DESENVOLVIMENTO    ## 
+##################################################
 # tipos de email criados até o momento:
 #  - validacao
 #  - cancelada
