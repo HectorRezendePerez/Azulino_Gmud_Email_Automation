@@ -13,7 +13,6 @@ class var:
     cc_enc_valid = " execucaodemudancas@getnet.com.br; planejamentodemudancas@getnet.com.br; gestao_mudanca@getnet.com.br; suporte@oraex.com; infra_requisicoes_incidentes@getnet.com.br;"
     cc_cancel_ins = "governanca_ti@getnet.com.br; execucaodemudancas@getnet.com.br; planejamentodemudancas@getnet.com.br; soc@getnet.com.br; gestao_mudanca@getnet.com.br; infra_requisicoes_incidentes@getnet.com.br; integracao_demandas@getnet.com.br; suporte@oraex.com"
     cc_teste = "hectordavidrezende@gmail.com; hectordavidrezende@outlook.com.br"
-    path_xlsx = ('C:\email_gmud_win32\excel_automation.xlsx')
 
 
 

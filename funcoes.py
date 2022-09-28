@@ -2,14 +2,12 @@ import win32com.client as win
 from variables import var
 import pandas as pd
 class func:
-    def ler_planilha(path):
-        plan = pd.read_excel(r'{path}'.format(path=path))
-        return plan
+
     def cria_email(tipo ,para , GMUD ,HOST_service ,descricao ):
         outlook = win.Dispatch('outlook.application')
         email = outlook.CreateItem(0)
+        email.To = para
         if tipo == 'validacao':
-            email.To = para
             email.CC = var.cc_teste
             email.Subject = f'[VALIDAÇÃO] - GMUD: {GMUD} - Adequações de Segurança - {HOST_service}'
             email.HTMLBody = f"""
@@ -34,8 +32,10 @@ class func:
             <p class="elementToProof"><br></p>
             {var.rodape}
             """
+            email.Save()
+
+
         elif tipo == 'encerrada':
-            email.To = para
             email.CC = var.cc_teste
             email.Subject = f'[ENCERRADA] - GMUD: {GMUD} - Adequações de Segurança - {HOST_service}'
             email.HTMLBody = f"""
@@ -57,8 +57,10 @@ class func:
             <p class="elementToProof"><br></p>
             {var.rodape}
             """
+            email.Save()
+
+
         elif tipo == 'cancelada':
-            email.To = para
             email.CC = var.cc_teste
             email.Subject = f'[CANCELAMENTO] - GMUD: {GMUD} - Adequações de Segurança - {HOST_service}'
             email.HTMLBody = f"""
@@ -83,8 +85,10 @@ class func:
             <p class="elementToProof"><br></p>
             {var.rodape}
             """
+            email.Save()
+
+
         elif tipo == 'inssucesso':
-            email.To = para
             email.CC = var.cc_teste
             email.Subject = f'[INSSUCESSO] - GMUD: {GMUD} - Adequações de Segurança - {HOST_service}'
             email.HTMLBody = f"""
@@ -106,7 +110,9 @@ class func:
             <p class="elementToProof"><br></p>
             {var.rodape}
             """
+            email.Save()
+
+
         else:
             print('tipo invalido, favor ajustar')
-        email.Save()
-        return print('email criado  e salvo para anexar evidendias')
+        return print('Finalizado')
