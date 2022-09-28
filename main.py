@@ -1,5 +1,7 @@
 import win32com.client as win
+import pandas as pd
 from funcoes import func
+from variables import var
 ##################################################
 ##    ESTA AUTOMAÇÃO ESTÁ EM DESENVOLVIMENTO    ## 
 ##################################################
@@ -10,5 +12,7 @@ from funcoes import func
 #  - inssucesso 
 #
 #             -tipo de email-    -para quem sera enviado-       -GMUD-      -Nome da maquina e aplicação-              -Descrição de ações realizadas e motivos-                
-func.cria_email('inssucesso' ,'hectordavidrezende@gmail.com', 'CHGTANANAN', 'GNCANNL5605 - linux/database', ' A aplicação de patches de S.O. foi realizada com sucesso. Reboot realizado com sucesso e nenhum patch pendente.')
+#func.cria_email('inssucesso' ,'hectordavidrezende@gmail.com', 'CHGTANANAN', 'GNCANNL5605 - linux/database', ' A aplicação de patches de S.O. foi realizada com sucesso. Reboot realizado com sucesso e nenhum patch pendente.')
+print(func.ler_planilha(var.path_xlsx))
+
 print('tarefa comcluida!')

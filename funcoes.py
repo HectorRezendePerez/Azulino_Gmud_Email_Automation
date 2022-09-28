@@ -1,6 +1,10 @@
 import win32com.client as win
 from variables import var
+import pandas as pd
 class func:
+    def ler_planilha(path):
+        plan = pd.read_excel(r'{path}'.format(path=path))
+        return plan
     def cria_email(tipo ,para , GMUD ,HOST_service ,descricao ):
         outlook = win.Dispatch('outlook.application')
         email = outlook.CreateItem(0)
