@@ -12,17 +12,19 @@ from variables import var
 #  - encerrada
 #  - inssucesso 
 #
+# Projeto para integração com planilha para organização de dados automatica, sendo necessário apenas passar o path da planilha manualmente!
+# 
+# Pendencias:
+#  - interface para melhor visualização dos dados passados
+#  - integração com excel via pandas
+
+
 
 tipo = input('estado de encerramento:\n Opções: validacao, cancelada, inssucesso e encerrada \n')
 para = input('email de validação:\n EX: *****@email.com; *****@outroemail.com.br\n')
 gmud = input('Numero da GMUD\n EX: CHG**** \n')
 host_application = input('Nome do host e a aplicação rodando:\n EX: GNCANNL5605 - linux/database\n')
 desc = input('Escreva a descrição do encerramento/motivos:\n')
-
-
-
-
-
 
 
 #-tipo de email-|-para quem sera enviado-|-GMUD-|-Nome da maquina e aplicação-|-Descrição de ações realizadas e motivos-                
