@@ -4,9 +4,13 @@ config:
     job: 'Analista Jr.'
     phone_number: '+55 61 9 9155-7667'
     email: 'hector.perez@oraex.com'
+
+
   paths:
-    path_to_prints: 'C:\Users\hecto\OneDrive\Imagens\teste_automation'
+    path_to_prints: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/dependencies/imgs'
     path_to_excel: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/Pasta1.xlsx'
+
+
   excel_columns_config:
     emailTo: 'destinatario'
     closure: 'encerramento'
@@ -17,3 +21,8 @@ config:
     description: 'obs'
     preCheck: 'pre alerta'
     afterCheck: 'pos alerta'
+
+    
+  email_configure:
+    success_copy: 'thalles.braga@oraex.com; david.ferreira@oraex.com'
+    canceled_insuccesss_copy: 'thalles.braga@oraex.com; david.ferreira@oraex.com'

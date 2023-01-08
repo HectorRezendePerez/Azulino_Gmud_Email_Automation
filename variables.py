@@ -13,3 +13,5 @@ class Var:
                 {configYaml['config']['email_signature']['phone_number']}</span><br />
                 <a href="mailto:{configYaml['config']['email_signature']['email']}">{configYaml['config']['email_signature']['email']}</a></p>
             """
+
+    
