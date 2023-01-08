@@ -8,7 +8,7 @@ config:
 
   paths:
     path_to_prints: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/dependencies/imgs'
-    path_to_excel: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/Pasta1.xlsx'
+    path_to_excel: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/dependencies/Pasta1.xlsx'
 
 
   excel_columns_config:
@@ -22,7 +22,7 @@ config:
     preCheck: 'pre alerta'
     afterCheck: 'pos alerta'
 
-    
+
   email_configure:
     success_copy: 'thalles.braga@oraex.com; david.ferreira@oraex.com'
     canceled_insuccesss_copy: 'thalles.braga@oraex.com; david.ferreira@oraex.com'
