@@ -1,0 +1,19 @@
+config:
+  email_signature:
+    name: 'Deivinho'
+    job: 'Analista Jr.'
+    phone_number: '+55 61 9 9155-7667'
+    email: 'thalles.braga@oraex.com'
+  paths:
+    path_to_prints: 'C:\Users\hecto\OneDrive\Imagens\teste_automation'
+    path_to_excel: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/Pasta1.xlsx'
+  excel_columns_config:
+    emailTo: 'destinatario'
+    closure: 'encerramento'
+    gmud: 'catapimbas'
+    adequacy: 'nome'
+    host: 'maquinas'
+    primaryContactEmail: 'responsavel'
+    description: 'obs'
+    preCheck: 'pre alerta'
+    afterCheck: 'pos alerta'

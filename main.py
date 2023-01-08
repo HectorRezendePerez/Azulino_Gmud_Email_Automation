@@ -1,20 +1,24 @@
 import win32com.client as win
 import pandas as pd
+import os, fnmatch
 from variables import Var
-df = pd.read_excel("c:/email_gmud_win32/git_repo/automation_email_GMUD/Pasta1.xlsx")
+
+
+
+df = pd.read_excel(Var.configYaml['config']['paths']['path_to_excel'])
 print(df)
-for ind, host_value in enumerate(df['MÁQUINAS']):
+for ind, host_value in enumerate(df[str(Var.configYaml['config']['excel_columns_config']['host'])]):
     #DADOS DE ENCAMINHAMENTO
-    emailTo = df.loc[ind, 'DESTINATÁRIO']
+    emailTo = df.loc[ind, str(Var.configYaml['config']['excel_columns_config']['emailTo'])]
     #DADOS DO CORPO
-    closure = df.loc[ind,'ENCERRAMENTO']
-    gmud = df.loc[ind,'GMUD']
-    adequacy = df.loc[ind,'NOME']
+    closure = df.loc[ind,str(Var.configYaml['config']['excel_columns_config']['closure'])]
+    gmud = df.loc[ind,str(Var.configYaml['config']['excel_columns_config']['gmud'])]
+    adequacy = df.loc[ind,str(Var.configYaml['config']['excel_columns_config']['adequacy'])]
     host = host_value
-    primaryContactEmail = df.loc[ind,'RESPONSÁVEL']
-    description = df.loc[ind, 'DESCRIÇÃO']
-    preCheck = df.loc[ind, 'PRÉ ALERTA']
-    afterCheck = df.loc[ind, 'PÓS ALERTA']
+    primaryContactEmail = df.loc[ind,str(Var.configYaml['config']['excel_columns_config']['primaryContactEmail'])]
+    description = df.loc[ind, str(Var.configYaml['config']['excel_columns_config']['description'])]
+    preCheck = df.loc[ind, str(Var.configYaml['config']['excel_columns_config']['preCheck'])]
+    afterCheck = df.loc[ind, str(Var.configYaml['config']['excel_columns_config']['afterCheck'])]
 
     index_closure = closure.find('-')
     if index_closure <= 9:
@@ -29,14 +33,12 @@ for ind, host_value in enumerate(df['MÁQUINAS']):
     email = outlook.CreateItem(0)
 
     email.to = emailTo
-    email.Subject = f'[ {treated_closure_str} ] - {gmud} - {adequacy}'
+    email.Subject = f'[{treated_closure_str}] - {gmud} - {adequacy}'
     email.HTMLBody = f'''
     <p>Prezados,&nbsp;</p>
-    
+    <p>Segue o status da mudan&ccedil;a:&nbsp;<strong>[{treated_closure_str}] - {gmud} - {adequacy}</strong></p>
     <p>&nbsp;</p>
-    <p>Segue o status da mudan&ccedil;a:&nbsp;<strong>[ {treated_closure_str} ] - {gmud} - {adequacy}</strong></p>
-    <p>&nbsp;</p>
-    <p>&Aacute;rea respons&aacute;vel para valida&ccedil;&atilde;o:&nbsp;<strong>{primaryContactEmail}</strong></p>
+    <p>Respons&aacute;vel para valida&ccedil;&atilde;o:&nbsp;<strong>{primaryContactEmail}</strong></p>
     <p>Servidor:&nbsp;<strong>{host}</strong></p>
     <p>Contato plantonista:&nbsp;<strong>{emailTo}</strong></p>
     <p>Alertas Zabbix antes execu&ccedil;&atilde;o:&nbsp;<strong>{preCheck}</strong>&nbsp;&nbsp;(Anexar o print com a evid&ecirc;ncia)</p>
@@ -48,4 +50,16 @@ for ind, host_value in enumerate(df['MÁQUINAS']):
     <img alt="" src="https://i.ibb.co/s1vcggZ/thumbnail-Outlook-ir4tv3sj.png">
     </p>   
     '''
+    path = str(Var.configYaml['config']['paths']['path_to_prints'])
+    pattern = f'*{gmud}*'
+    filesListArray = []
+
+    for dName, sdName, fList in os.walk(path):
+        for fileName in fList:
+            if fnmatch.fnmatch(fileName, pattern):
+                filesListArray.append(os.path.join(dName, fileName))
+    filesListArray = sorted(filesListArray)
+    print(filesListArray)
+    for i in filesListArray:
+        email.Attachments.Add(i)
     email.Send()
