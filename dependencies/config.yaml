@@ -1,9 +1,9 @@
 config:
   email_signature:
-    name: 'Deivinho'
+    name: 'Hector Perez'
     job: 'Analista Jr.'
     phone_number: '+55 61 9 9155-7667'
-    email: 'thalles.braga@oraex.com'
+    email: 'hector.perez@oraex.com'
   paths:
     path_to_prints: 'C:\Users\hecto\OneDrive\Imagens\teste_automation'
     path_to_excel: 'c:/email_gmud_win32/git_repo/automation_email_GMUD/Pasta1.xlsx'
