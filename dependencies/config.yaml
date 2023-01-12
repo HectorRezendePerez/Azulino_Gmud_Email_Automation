@@ -1,28 +1,28 @@
 config:
   email_signature:
-    name: '.'
-    job: '.'
-    phone_number: '.'
-    email: '.'
+    name: 'azulino automation'
+    job: 'example'
+    phone_number: 'example'
+    email: 'example'
 
 
   paths:
-    path_to_prints: ''
-    path_to_excel: ''
+    path_to_prints: 'C:\email_gmud_win32\'
+    path_to_excel: 'C:\email_gmud_win32\'
 
 
   excel_columns_config:
-    emailTo: ''
-    closure: ''
-    gmud: ''
-    adequacy: ''
-    host: ''
-    primaryContactEmail: ''
-    description: ''
-    preCheck: ''
-    afterCheck: ''
+    emailTo: 'destinatario'
+    closure: 'encerramento'
+    gmud: 'catapimbas'
+    adequacy: 'nome'
+    host: 'maquinas'
+    primaryContactEmail: 'destinatario'
+    description: 'obs'
+    preCheck: 'pre alerta'
+    afterCheck: 'pos alerta'
 
 
   email_configure:
-    success_copy: ''
-    canceled_insuccesss_copy: ''
+    success_copy: '.'
+    canceled_insuccesss_copy: '.'

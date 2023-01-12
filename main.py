@@ -12,7 +12,7 @@ while True:
         print(df)
         time.sleep(2)
     elif option == 'azulino --help':
-        print('')
+        print('send        -> envia os emails \ncheck excel -> verifica o teu excel (printa na tela o dataframe) \nexit        -> encerra o processo')
     elif option == 'send':        
         for ind, host_value in enumerate(df[str(Var.configYaml['config']['excel_columns_config']['host'])]):
             #DADOS DE ENCAMINHAMENTO
@@ -54,8 +54,8 @@ while True:
             <p>Respons&aacute;vel para valida&ccedil;&atilde;o:&nbsp;<strong>{primaryContactEmail}</strong></p>
             <p>Servidor:&nbsp;<strong>{host}</strong></p>
             <p>Contato plantonista:&nbsp;<strong>{emailTo}</strong></p>
-            <p>Alertas Zabbix antes execu&ccedil;&atilde;o:&nbsp;<strong>{preCheck}</strong>&nbsp;&nbsp;(Anexar o print com a evid&ecirc;ncia)</p>
-            <p>Alertas Zabbix p&oacute;s execu&ccedil;&atilde;o:&nbsp;<strong>{afterCheck}</strong>&nbsp;&nbsp;(Anexar o print com a evid&ecirc;ncia)</p>
+            <p>Alertas Zabbix antes execu&ccedil;&atilde;o:&nbsp;<strong>{preCheck}</strong></p>
+            <p>Alertas Zabbix p&oacute;s execu&ccedil;&atilde;o:&nbsp;<strong>{afterCheck}</strong></p>
             <p>Observa&ccedil;&otilde;es:&nbsp;<strong>{description}</strong><br /p>
             <br />
             <p><strong>Por gentileza, validar o funcionamento do ambiente.</strong></p>
