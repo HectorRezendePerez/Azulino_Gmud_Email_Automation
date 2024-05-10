@@ -4,6 +4,7 @@ import os, fnmatch
 
 
 class Var:
+    self.teste = "teste de pr"
     with open('dependencies\config.yaml') as f:
         configYaml = ym.load(f, Loader=SafeLoader)
     rodape =f"""
